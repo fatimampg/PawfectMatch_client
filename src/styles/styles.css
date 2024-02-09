@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Inter:wght@300;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-h1 {
+    @apply text-[1.25rem] font-customFont text-darkest;
+}
+
+.custom-h2 {
+    @apply text-[1.125rem] font-customFont text-darkest;
+}
+
+.custom-h3 {
+    @apply text-[1.00rem] font-customFont text-darkest;
+}
+
+.custom-h4 {
+    @apply text-[1.00rem] font-customFont  text-darkest;
+}
+
+.custom-darkest-card {
+    @apply bg-darkest rounded-[20px] p-10 shadow-xl;
+}
+
+.custom-button-darkest-card {
+    @apply text-darkest bg-lightest hover:bg-medium mt-[2rem] mb-[2rem] rounded-[20px] text-[1.00rem] font-semibold hover:text-lightest;
+}
+
+.custom-button-over-white-bg {
+    @apply text-white bg-medium hover:bg-darkest mt-[2rem] mb-[2rem] rounded-[20px] text-[1.00rem] font-semibold hover:text-white;
+}
+
+.custom-button-over-white-bg2 {
+    @apply text-white bg-darkest hover:bg-darkest mt-[2rem] mb-[2rem] rounded-[20px] text-[1.25rem] font-semibold hover:text-white;
+}
+
+.card-results-dogs {
+    @apply text-white bg-medium mb-[2rem] rounded-[20px] shadow-md p-[15px];
+}
+
+.custom-select-option {
+    @apply text-darkest mb-[1.1rem] block h-[2.4rem] text-[0.9rem] rounded-[20px] border border-darkest;
+}
+
+.user-data-input  {
+    @apply border-darkest h-[2.4rem] rounded-[20px] border hover:border-2 text-[0.9rem];
+}
+
+.radio-button  {
+    @apply bg-medium border-medium text-darkGrey focus:border-darkGrey focus:ring focus:ring-white focus:ring-opacity-50;
+}
+
+.custom-button-over-lightest-bg {
+    @apply text-lightest bg-medium hover:bg-darkest mt-[2rem] mb-[2rem] rounded-[20px] text-[1.125rem] font-semibold hover:text-white;
+}
