@@ -36,10 +36,10 @@ const DogSearchParams = () => {
           `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldog`,
           {
             withCredentials: true,
-          }
+          },
         );
         const locationdata = response.data;
-        console.log(locationdata);
+        //console.log(locationdata);
         setFilteredDogsArray(locationdata);
       } catch (error) {
         console.log(error);
@@ -66,11 +66,11 @@ const DogSearchParams = () => {
             `${
               import.meta.env.VITE_REACT_APP_BASE_URL
             }/mydogs?country=${encodeURIComponent(
-              selectedCountry
-            )}&dogBreed=${encodeURIComponent(selectedBreed)}`
+              selectedCountry,
+            )}&dogBreed=${encodeURIComponent(selectedBreed)}`,
           );
 
-          console.log("Country data sent successfully");
+          //console.log("Country data sent successfully");
         } catch (error) {
           console.error("Error sending country data:", error.message);
         }
@@ -81,10 +81,10 @@ const DogSearchParams = () => {
               `${
                 import.meta.env.VITE_REACT_APP_BASE_URL
               }/mydogs?country=${selectedCountry}&state=${encodeURIComponent(
-                selectedState
-              )}&dogBreed=${encodeURIComponent(selectedBreed)}`
+                selectedState,
+              )}&dogBreed=${encodeURIComponent(selectedBreed)}`,
             );
-            console.log("Country and state data sent successfully");
+            //console.log("Country and state data sent successfully");
           } catch (error) {
             console.error(
               "Error sending country and state data:",
@@ -97,12 +97,12 @@ const DogSearchParams = () => {
               `${
                 import.meta.env.VITE_REACT_APP_BASE_URL
               }/mydogs?country=${selectedCountry}&state=${encodeURIComponent(
-                selectedState
+                selectedState,
               )}&city=${encodeURIComponent(
-                selectedCity
-              )}&dogBreed=${encodeURIComponent(selectedBreed)}`
+                selectedCity,
+              )}&dogBreed=${encodeURIComponent(selectedBreed)}`,
             );
-            console.log("All data sent successfully");
+            //console.log("All data sent successfully");
           } catch (error) {
             console.error("Error sending all data:", error.message);
           }
@@ -112,16 +112,16 @@ const DogSearchParams = () => {
   };
 
   const sendDataToServer = async (apiurl) => {
-    console.log(apiurl);
+    //console.log(apiurl);
     try {
       const response = await axios.get(apiurl, {
         withCredentials: true,
       });
       const locationdata = response.data;
-      console.log(locationdata);
+      //console.log(locationdata);
       setFilteredDogsArray(locationdata);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 

@@ -27,7 +27,7 @@ const DogCardEditRemove = ({
       );
       const removeDogState = response.data;
       navigate(0);
-      console.log("dog removed from the DB", removeDogState);
+      //console.log("dog removed from the DB", removeDogState);
     } catch (error) {
       console.log(error);
       console.log("Error fetching dog information");

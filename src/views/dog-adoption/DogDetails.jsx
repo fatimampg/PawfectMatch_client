@@ -35,12 +35,12 @@ const DogDetails = () => {
       navigate("/login");
       alert("Login or Register To See  Dog Details");
     }
-    console.log(mail);
+    //console.log(mail);
   }, [mail]);
 
   const navigate = useNavigate();
   const { dogId } = useParams();
-  console.log(dogId);
+  //console.log(dogId);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   //Initializing dogs info:
   const [dogInfo, setDogInfo] = useState({
@@ -66,8 +66,8 @@ const DogDetails = () => {
         `${import.meta.env.VITE_REACT_APP_BASE_URL}/userAssociation/${dogId}`,
       );
       const fetchedDogInfo2 = response2.data;
-      console.log("dog initially fetched from the DB", fetchedDogInfo2);
-      console.log("dog initially fetched from the DB", fetchedDogInfo);
+      //console.log("dog initially fetched from the DB", fetchedDogInfo2);
+      //console.log("dog initially fetched from the DB", fetchedDogInfo);
       setDogInfo({
         dogName: fetchedDogInfo.dogName,
         dogBreed: fetchedDogInfo.dogBreed,

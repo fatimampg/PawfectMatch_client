@@ -24,7 +24,7 @@ const ManageDogs = () => {
       );
 
       const fetchedDogsList = await response.data;
-      console.log("List of dogs added by this association", fetchedDogsList);
+      //console.log("List of dogs added by this association", fetchedDogsList);
       setFilteredDogsArray(fetchedDogsList);
     } catch (error) {
       console.log(error);

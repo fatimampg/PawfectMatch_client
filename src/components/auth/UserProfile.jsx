@@ -38,10 +38,10 @@ const UserProfile = () => {
   const token = currentUser?.mail;
   let userType = currentUser?.usertype;
 
-  console.log(
-    "userType identified in token - CHECK if it is correct!",
-    userType,
-  );
+  // console.log(
+  //   "userType identified in token - CHECK if it is correct!",
+  //   userType,
+  // );
 
   //Initializing userInfo used to collect user data from the DB:
   const [userInfo, setUserInfo] = useState({
@@ -83,7 +83,7 @@ const UserProfile = () => {
         { withCredentials: true },
       );
       const fetchedUserInfo = await response.data;
-      console.log("userInfo initially fetched from the DB", fetchedUserInfo);
+      //console.log("userInfo initially fetched from the DB", fetchedUserInfo);
 
       setUserInfo({
         associationName: fetchedUserInfo.associationName,
@@ -122,12 +122,12 @@ const UserProfile = () => {
   const handleEditMode = () => {
     setEditMode(!editMode);
   };
-  useEffect(() => {
-    console.log(
-      "editMode (when EDIT button is clicked should be true, and when CANCEL button is clicked should be false)",
-      editMode,
-    );
-  }, [editMode]);
+  // useEffect(() => {
+  //   console.log(
+  //     "editMode (when EDIT button is clicked should be true, and when CANCEL button is clicked should be false)",
+  //     editMode,
+  //   );
+  // }, [editMode]);
 
   // In case the user doesn't want to save changes:
   const handleCancelClick = () => {
@@ -141,20 +141,20 @@ const UserProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Log the data being sent to the server
-    console.log("Data that is going to be sent to the DB:", {
-      associationName: associationName,
-      nameFirst: nameFirst,
-      nameLast: nameLast,
-      contactEmail: contactEmail,
-      contactPhone: contactPhone,
-      country: selectedCountry,
-      city: selectedCity,
-      state: selectedState,
-      description: description,
-      checkBox: isChecked,
-      userType,
-      photo: photo,
-    });
+    // console.log("Data that is going to be sent to the DB:", {
+    //   associationName: associationName,
+    //   nameFirst: nameFirst,
+    //   nameLast: nameLast,
+    //   contactEmail: contactEmail,
+    //   contactPhone: contactPhone,
+    //   country: selectedCountry,
+    //   city: selectedCity,
+    //   state: selectedState,
+    //   description: description,
+    //   checkBox: isChecked,
+    //   userType,
+    //   photo: photo,
+    // });
 
     setError("");
     setEditMode(false);
@@ -187,22 +187,22 @@ const UserProfile = () => {
     }
   };
 
-  useEffect(() => {
-    // Log updated userData after it has been set
-    console.log(
-      "isChecked value (taking into account the checkbox option)",
-      isChecked,
-    );
-  }, [isChecked]);
+  // useEffect(() => {
+  //   // Log updated userData after it has been set
+  //   console.log(
+  //     "isChecked value (taking into account the checkbox option)",
+  //     isChecked,
+  //   );
+  // }, [isChecked]);
 
   const handlePhotoChange = (e) => {
     const selectedPhoto = e.target.files[0];
     setFile(selectedPhoto);
-    console.log("selected photo", selectedPhoto);
+    //console.log("selected photo", selectedPhoto);
   };
   useEffect(() => {
     file && uploadFile(file, "photoUrl");
-    console.log("file", file);
+    //console.log("file", file);
   }, [file]);
   const uploadFile = (file) => {
     const storage = getStorage(app);
@@ -247,7 +247,7 @@ const UserProfile = () => {
       () => {
         // Upload completed successfully, now we can get the download URL
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
+          //console.log("File available at", downloadURL);
           setPhoto(downloadURL);
           setPhotoDb({ profilePicture: downloadURL });
         });
@@ -256,7 +256,7 @@ const UserProfile = () => {
   };
 
   const uploadPhoto = async (photo) => {
-    console.log(photo);
+    //console.log(photo);
     try {
       const response = axios.post(
         `${import.meta.env.VITE_REACT_APP_BASE_URL}/editpicture`,
@@ -266,15 +266,15 @@ const UserProfile = () => {
         },
       );
       const userPhoto = response.data;
-      console.log("database photo url ", userPhoto);
+      //console.log("database photo url ", userPhoto);
     } catch (error) {
       console.log("  error upload user photo", error);
     }
   };
 
-  useEffect(() => {
-    console.log("photo Url to be sent to the database ", photo);
-  });
+  // useEffect(() => {
+  //   console.log("photo Url to be sent to the database ", photo);
+  // });
 
   return (
     <div className="profile-container pt-[5rem]">

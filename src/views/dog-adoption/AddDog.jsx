@@ -75,24 +75,24 @@ const AddDog = () => {
     setDogDescription("");
     setDogProfilePhoto(noPhoto);
     setError("");
-    console.log("clearing all input fields");
+    //console.log("clearing all input fields");
   };
 
   // Send NEW DOG data to the data base:
   const handleAddDog = async (e) => {
     e.preventDefault();
 
-    console.log("Data that is going to be sent to the DB:", {
-      dogName: dogName,
-      dogBreed: selectedBreed,
-      dogAge: dogAge,
-      country: selectedCountry,
-      state: selectedState,
-      city: selectedCity,
-      dogDescription: dogDescription,
-      dogProfilePhoto: dogProfilePhoto,
-      associationName: associationName,
-    });
+    // console.log("Data that is going to be sent to the DB:", {
+    //   dogName: dogName,
+    //   dogBreed: selectedBreed,
+    //   dogAge: dogAge,
+    //   country: selectedCountry,
+    //   state: selectedState,
+    //   city: selectedCity,
+    //   dogDescription: dogDescription,
+    //   dogProfilePhoto: dogProfilePhoto,
+    //   associationName: associationName,
+    // });
 
     // Send the updated information to the BE:
     try {
@@ -121,8 +121,8 @@ const AddDog = () => {
       setDogDescription("");
       setDogProfilePhoto(noPhoto);
       setError("");
-      console.log("clearing all input fields");
-      console.log("dog ddedd", dog);
+      //console.log("clearing all input fields");
+      //console.log("dog ddedd", dog);
     } catch (error) {
       console.log(error);
     }
@@ -130,7 +130,7 @@ const AddDog = () => {
   const handlePhotoChange = (e) => {
     const selectedPhoto = e.target.files[0];
     setFile(selectedPhoto);
-    console.log("selected photo", selectedPhoto);
+    //console.log("selected photo", selectedPhoto);
   };
   useEffect(() => {
     file && uploadFile(file, "photoUrl");

@@ -2,11 +2,11 @@ let citiesList = [];
 
 async function fetchCities(selectedCountryIso2, selectedStateIso2) {
   if (!selectedCountryIso2) {
-    console.log("selectedCountryIso2 is not defined");
+    //console.log("selectedCountryIso2 is not defined");
     return [];
   }
   if (!selectedCountryIso2 && !selectedStateIso2) {
-    console.log("selectedCountryIso2 and selectedStateIso2 are not defined");
+    //console.log("selectedCountryIso2 and selectedStateIso2 are not defined");
     return [];
   }
 
@@ -23,7 +23,7 @@ async function fetchCities(selectedCountryIso2, selectedStateIso2) {
     headers: headers,
     redirect: "follow",
   };
-  console.log("citiesList", citiesList);
+  //console.log("citiesList", citiesList);
   try {
     const response = await fetch(config.cUrl, requestOptions);
     citiesList = await response.json();

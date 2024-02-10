@@ -16,8 +16,8 @@ import {
 import app from "../../components/auth/firebase";
 
 const EditDog = () => {
-  const { dogId } = useParams(); 
-  console.log(dogId);
+  const { dogId } = useParams();
+  //console.log(dogId);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedCountryIso2, setSelectedCountryIso2] = useState("");
   const [selectedState, setSelectedState] = useState("");
@@ -28,7 +28,7 @@ const EditDog = () => {
   const [dogName, setDogName] = useState("");
   const [dogAge, setDogAge] = useState("");
   const [dogDescription, setDogDescription] = useState("");
-  const [dogProfilePhoto, setDogProfilePhoto] = useState(noPhoto); 
+  const [dogProfilePhoto, setDogProfilePhoto] = useState(noPhoto);
   const [photoPer, setPhotoPer] = useState(0);
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
@@ -36,7 +36,7 @@ const EditDog = () => {
   const navigate = useNavigate();
 
   const { currentUser } = useContext(UserContext);
-  const token = currentUser?.mail; 
+  const token = currentUser?.mail;
   let userType = currentUser?.usertype;
 
   //Get dog info - run when the component mounts:
@@ -59,14 +59,13 @@ const EditDog = () => {
 
   //GET INFO OF THAT DOG FROM THE DB, BASED ON THE dogId:
   const getDogInfo = async (dogId) => {
-
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BASE_URL}/dogs/${dogId}`
+        `${import.meta.env.VITE_REACT_APP_BASE_URL}/dogs/${dogId}`,
       );
 
       const fetchedDogInfo = await response.data;
-      console.log("dog initially fetched from the DB", fetchedDogInfo);
+      //console.log("dog initially fetched from the DB", fetchedDogInfo);
       setDogInfo({
         dogName: fetchedDogInfo.dogName,
         dogBreed: fetchedDogInfo.dogBreed,
@@ -94,7 +93,7 @@ const EditDog = () => {
   // fetch location data:
   const { countries, states, cities } = useLocationData(
     selectedCountryIso2,
-    selectedStateIso2
+    selectedStateIso2,
   );
 
   // fetch breeds (DOG-CEO-API) when the component mounts and update its state with fetched breeds:
@@ -115,23 +114,22 @@ const EditDog = () => {
     setDogDescription(dogInfo.dogDescription);
     setDogProfilePhoto(dogInfo.dogProfilePhoto);
     setError("");
-    console.log("clearing all input fields");
+    //console.log("clearing all input fields");
   };
-
 
   const handleEditDog = async (e) => {
     e.preventDefault();
 
-    console.log("Data that is going to be sent to the DB:", {
-      dogName: dogName,
-      dogBreed: selectedBreed,
-      dogAge: dogAge,
-      country: selectedCountry,
-      state: selectedState,
-      city: selectedCity,
-      dogDescription: dogDescription,
-      dogProfilePhoto: dogProfilePhoto,
-    });
+    // console.log("Data that is going to be sent to the DB:", {
+    //   dogName: dogName,
+    //   dogBreed: selectedBreed,
+    //   dogAge: dogAge,
+    //   country: selectedCountry,
+    //   state: selectedState,
+    //   city: selectedCity,
+    //   dogDescription: dogDescription,
+    //   dogProfilePhoto: dogProfilePhoto,
+    // });
 
     // Send the updated information to the BE:
     try {
@@ -146,11 +144,11 @@ const EditDog = () => {
           city: selectedCity,
           dogDescription: dogDescription,
           dogProfilePhoto: dogProfilePhoto,
-        }
+        },
       );
       const dog = await response.data;
       alert("Dog edited");
-      console.log(dog);
+      //console.log(dog);
     } catch (error) {
       setError(error.response.data);
       console.log(error);
@@ -159,7 +157,7 @@ const EditDog = () => {
   const handlePhotoChange = (e) => {
     const selectedPhoto = e.target.files[0];
     setFile(selectedPhoto);
-    console.log("selected photo", selectedPhoto);
+    //console.log("selected photo", selectedPhoto);
   };
   useEffect(() => {
     file && uploadFile(file, "photoUrl");
@@ -213,10 +211,9 @@ const EditDog = () => {
           console.log("File available at", downloadURL);
           setDogProfilePhoto(downloadURL);
         });
-      }
+      },
     );
   };
-
 
   return (
     <form className="add-dog" onSubmit={handleEditDog}>

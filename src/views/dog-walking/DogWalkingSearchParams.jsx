@@ -45,7 +45,7 @@ const DogWalkingSearchParams = () => {
           }/volunteer?country=${encodeURIComponent(selectedCountry)}`,
         );
 
-        console.log("Country data sent successfully");
+        //console.log("Country data sent successfully");
       } catch (error) {
         console.error("Error sending country data:", error.message);
       }
@@ -59,7 +59,7 @@ const DogWalkingSearchParams = () => {
               selectedState,
             )}`,
           );
-          console.log("Country and state data sent successfully");
+          //console.log("Country and state data sent successfully");
         } catch (error) {
           console.error("Error sending country and state data:", error.message);
         }
@@ -72,7 +72,7 @@ const DogWalkingSearchParams = () => {
               selectedState,
             )}&city=${encodeURIComponent(selectedCity)}`,
           );
-          console.log("All data sent successfully");
+          //console.log("All data sent successfully");
         } catch (error) {
           console.error("Error sending all data:", error.message);
         }
@@ -85,7 +85,7 @@ const DogWalkingSearchParams = () => {
         withCredentials: true,
       });
       const locationdata = response.data.volunteer;
-      console.log(locationdata);
+      //console.log(locationdata);
       setFilteredVolunteersArray(locationdata);
     } catch (error) {
       console.log(error);
@@ -108,7 +108,7 @@ const DogWalkingSearchParams = () => {
           }/association?country=${encodeURIComponent(selectedCountry)}`,
         );
 
-        console.log("Country data sent successfully");
+        //console.log("Country data sent successfully");
       } catch (error) {
         console.error("Error sending country data:", error.message);
       }
@@ -122,7 +122,7 @@ const DogWalkingSearchParams = () => {
               selectedState,
             )}`,
           );
-          console.log("Country and state data sent successfully");
+          //console.log("Country and state data sent successfully");
         } catch (error) {
           console.error("Error sending country and state data:", error.message);
         }
@@ -135,7 +135,7 @@ const DogWalkingSearchParams = () => {
               selectedState,
             )}&city=${encodeURIComponent(selectedCity)}`,
           );
-          console.log("All data sent successfully");
+          //console.log("All data sent successfully");
         } catch (error) {
           console.error("Error sending all data:", error.message);
         }
@@ -148,7 +148,7 @@ const DogWalkingSearchParams = () => {
         withCredentials: true,
       });
       const locationdata = response.data.associations;
-      console.log(locationdata);
+      //console.log(locationdata);
       setFilteredAssociationsArray(locationdata);
     } catch (error) {
       console.log(error);

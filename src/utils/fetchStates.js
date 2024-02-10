@@ -1,6 +1,6 @@
 async function fetchStates(selectedCountryIso2) {
   if (!selectedCountryIso2) {
-    console.log("selectedCountruIso2 is not defined");
+    //console.log("selectedCountruIso2 is not defined");
     return [];
   }
 

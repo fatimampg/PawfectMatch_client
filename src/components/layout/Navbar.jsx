@@ -22,9 +22,9 @@ const Navbar = () => {
     }
   }, [token]);
 
-  useEffect(() => {
-    console.log("isLoggedin", isLoggedIn);
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   console.log("isLoggedin", isLoggedIn);
+  // }, [isLoggedIn]);
 
   const handleLogout = () => {
     axios.get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/logout`, {
@@ -32,7 +32,7 @@ const Navbar = () => {
     });
     setCurrentUser(null);
     navigate("/login");
-    console.log("User is logged out", currentUser);
+    //console.log("User is logged out", currentUser);
   };
 
   return (
@@ -97,7 +97,7 @@ const Navbar = () => {
                   <ion-icon
                     onClick={() => {
                       setMenuOpen((prev) => !prev);
-                      console.log("Toggle menu clicked");
+                      //console.log("Toggle menu clicked");
                     }}
                     name="menu-outline"
                   ></ion-icon>
@@ -119,7 +119,7 @@ const Navbar = () => {
                   <ion-icon
                     onClick={() => {
                       setMenuOpen((prev) => !prev);
-                      console.log("Toggle menu clicked");
+                      //console.log("Toggle menu clicked");
                     }}
                     name="menu-outline"
                   ></ion-icon>

@@ -20,13 +20,13 @@ const Register = () => {
         ...prevUserData,
         userType: value,
       }));
-      console.log("Form submitted with values:", userData);
+      //console.log("Form submitted with values:", userData);
     } else {
       setuserdata((prevUserData) => ({
         ...prevUserData,
         [name]: value,
       }));
-      console.log("Form submitted with values:", userData);
+      //console.log("Form submitted with values:", userData);
     }
   };
 
@@ -39,7 +39,7 @@ const Register = () => {
         userData,
       );
       const newUser = await response.data;
-      console.log(newUser);
+      //console.log(newUser);
       if (!newUser) setError("cant register user at this time ,pls try again");
       navigate("/login");
     } catch (err) {

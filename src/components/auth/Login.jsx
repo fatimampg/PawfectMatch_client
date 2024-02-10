@@ -24,17 +24,17 @@ const Login = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_REACT_APP_BASE_URL}/login`,
-        userData
+        userData,
       );
       const user = await response.data;
       setCurrentUser(user);
-      console.log(user);
+      //console.log(user);
       if (user) {
         navigate("/");
       }
     } catch (err) {
       setError(err.response.data);
-      console.log(err);
+      //console.log(err);
     }
   };
 
