@@ -16,8 +16,12 @@ const Volunteer = ({
 
   return (
     <div className="card-results-dogs flex h-[9rem] w-[48.0rem] items-center">
-      <div className="float-left ml-[1rem] mr-[1.5rem] mt-[1rem] h-[7rem] w-[5.251rem] object-cover">
-        <img src={mainVolunteerPhoto} alt={name} />
+      <div className="float-left ml-[1rem] mr-[1.5rem] mt-[0.5rem] h-[7rem] w-[5.251rem] ">
+        <img
+          src={mainVolunteerPhoto}
+          alt={name}
+          className="h-full w-full object-cover"
+        />
       </div>
       <div className="dogs-info">
         <h2 className="text-[1.00rem] text-white">

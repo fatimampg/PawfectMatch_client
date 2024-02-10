@@ -10,9 +10,13 @@ const Dog = ({ dogPhotos, dogId, dogName, dogBreed, location }) => {
 
   return (
     <Link to={`/dogdetails/${dogId}`} className="">
-      <div className="card-results-dogs flex h-[9rem] w-[48.0rem] items-center">
-        <div className="float-left ml-[1rem] mr-[1.5rem] mt-[1rem] h-[7rem] w-[5.251rem] rounded-full object-cover">
-          <img src={mainDogPhoto} alt={dogName} />
+      <div className="card-results-dogs flex h-[9.00rem] w-[48.0rem] items-center">
+        <div className="float-left ml-[1rem] mr-[1.5rem] mt-[0.5rem] h-[7rem] w-[5.251rem] rounded-full ">
+          <img
+            src={mainDogPhoto}
+            alt={dogName}
+            className="h-full w-full object-cover"
+          />
         </div>
         <div className="dogs-info font-bold">
           <h1 className="text-[1.00rem] text-white">
