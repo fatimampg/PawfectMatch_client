@@ -119,7 +119,7 @@ const AddDog = () => {
       setDogName("");
       setDogAge("");
       setDogDescription("");
-      setDogProfilePhoto(dogProfilePhoto);
+      setDogProfilePhoto(noPhoto);
       setError("");
       console.log("clearing all input fields");
       console.log("dog ddedd", dog);
