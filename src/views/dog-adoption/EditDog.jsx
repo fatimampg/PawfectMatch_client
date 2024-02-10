@@ -168,8 +168,8 @@ const EditDog = () => {
     const fileName = new Date().getTime() + file.name;
     const storageRef = ref(storage, "images/" + fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
-    console.log("Upload task created:", uploadTask);
-    console.log("filename:", fileName);
+    //console.log("Upload task created:", uploadTask);
+    //console.log("filename:", fileName);
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(
       "state_changed",
@@ -178,13 +178,13 @@ const EditDog = () => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setPhotoPer(Math.round(progress));
-        console.log("Upload is " + progress + "% done");
+        //console.log("Upload is " + progress + "% done");
         switch (snapshot.state) {
           case "paused":
-            console.log("Upload is paused");
+            //console.log("Upload is paused");
             break;
           case "running":
-            console.log("Upload is running");
+            //console.log("Upload is running");
             break;
         }
       },
@@ -208,7 +208,7 @@ const EditDog = () => {
       () => {
         // Upload completed successfully, now we can get the download URL
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
+          //console.log("File available at", downloadURL);
           setDogProfilePhoto(downloadURL);
         });
       },
