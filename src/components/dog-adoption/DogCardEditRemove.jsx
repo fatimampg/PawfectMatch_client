@@ -35,18 +35,19 @@ const DogCardEditRemove = ({
   };
 
   return (
-    <div className="card-results-dogs flex h-[9rem] w-[60.0rem] items-center">
-      <div className="dogs-info-photo flex items-center">
-        <div className="dog-photo float-left ml-[1rem] mr-[1.5rem] mt-[1rem] h-[7rem] w-[5.251rem] cursor-pointer rounded-full object-cover">
+    <div className="card-results-dogs mr-[1rem] flex h-auto max-w-[60.0rem] flex-wrap items-center">
+      <div className="dogs-info-photo flex flex-wrap items-center">
+        <div className="float-left m-[0.8rem] h-[7rem] min-h-[7rem] w-[5.251rem] min-w-[5.251rem] cursor-pointer">
           <img
             src={mainDogPhoto}
             alt={dogName}
+            className="h-full w-full object-cover"
             onError={(e) => {
               e.target.src = noPhoto;
             }}
           />
         </div>
-        <div className="dogs-info font-bold">
+        <div className="dogs-info break-all">
           <h1 className="text-[1.00rem] text-white">
             Name:&nbsp;&nbsp;&nbsp;{dogName}
           </h1>
@@ -58,16 +59,16 @@ const DogCardEditRemove = ({
           </h2>
         </div>
       </div>
-      <div className="ml-auto flex">
+      <div className="ml-auto flex flex-wrap">
         <button
-          className="custom-button-darkest-card  mr-[1rem] h-[3.0rem] w-[8.0rem]"
+          className="custom-button-darkest-card  mr-[1rem] h-auto w-full max-w-[8.0rem] p-2"
           type="button"
           onClick={() => navigate(`/editdog/${dogId}`)}
         >
           EDIT
         </button>
         <button
-          className="custom-button-darkest-card ml-[0.5rem] mr-[1rem] h-[3.0rem] w-[8.0rem]"
+          className="custom-button-darkest-card ml-[0.5rem] mr-[1rem] h-auto w-full max-w-[8.0rem] p-2"
           type="button"
           onClick={() => handleRemoveDog(dogId)}
         >

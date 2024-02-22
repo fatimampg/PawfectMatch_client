@@ -25,7 +25,7 @@
 }
 
 .custom-button-darkest-card {
-    @apply text-darkest bg-lightest hover:bg-medium mt-[2rem] mb-[2rem] rounded-[20px] text-[1.00rem] font-semibold hover:text-lightest;
+    @apply text-darkest bg-lightest hover:bg-medium mt-[1rem] mb-[1rem] rounded-[20px] text-[1.00rem] font-semibold hover:text-lightest;
 }
 
 .custom-button-over-white-bg {

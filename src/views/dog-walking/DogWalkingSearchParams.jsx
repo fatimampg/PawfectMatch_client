@@ -166,9 +166,9 @@ const DogWalkingSearchParams = () => {
             <div className="two-columns-left mt-[2rem] w-full basis-[38rem] pr-0 lg:w-[1/2]">
               <form
                 onSubmit={requestFilteredAssociations}
-                className="custom-darkest-card ml-[6.0rem] h-[26.5rem] w-[32.0rem] "
+                className="custom-darkest-card ml-[2.0rem] mr-[2.0rem] h-[26.5rem] max-w-[30.0rem] "
               >
-                <div className="location-info mt-[2.0rem] flex justify-start space-x-[1.0rem]">
+                <div className="location-info mt-[2.0rem] ">
                   <h1 className="mb-2 p-0 text-[1.125rem] font-semibold tracking-wide text-white">
                     LOCATION:
                   </h1>
@@ -196,9 +196,8 @@ const DogWalkingSearchParams = () => {
                 </div>
               </form>
             </div>
-            <div></div>
 
-            <div className="two-columns-right ml-[6.0rem] mr-[0rem] mt-[2rem] w-full pl-0 lg:w-1/2 lg:flex-grow">
+            <div className="two-columns-right ml-[2.0rem] mr-[0rem] mt-[2rem] w-full pl-0 lg:w-1/2 lg:flex-grow">
               <ResultsVolunteers
                 filteredVolunteersArray={filteredVolunteersArray}
               />
@@ -218,7 +217,7 @@ const DogWalkingSearchParams = () => {
           <h1 className="text-darkest font-customFont mb-[3rem] mt-[4rem] w-full justify-center text-center text-[1.25rem] font-semibold">
             HOW CAN I HELP?
           </h1>
-          <h2 className="bg-medium ml-[3.5rem] mr-[3.5rem] justify-center rounded-[20px] p-[2rem] text-center font-bold leading-5 text-white shadow-md">
+          <h2 className="bg-medium ml-[2.0rem] mr-[2.0rem] justify-center rounded-[20px] p-[2rem] text-center font-bold leading-5 text-white shadow-md">
             Dogs don’t only need food and a roof over their heads to thrive, but
             also affection and lots of outdoor and playtime! <br />
             <br />
@@ -226,18 +225,18 @@ const DogWalkingSearchParams = () => {
             volunteers to walk their dogs.
           </h2>
 
-          <h1 className="text-darkest font-customFont mt-[4rem] flex justify-center text-[1.25rem] font-semibold">
+          <h1 className="text-darkest font-customFont ml-[2rem] mr-[2rem] flex justify-center pt-[2.38rem] text-[1.25rem] font-semibold">
             FIND SHELTERS THAT NEED HELP
           </h1>
 
-          <div className="dog-walking-search flex w-full flex-wrap justify-start">
+          <div>
             <div className="flex flex-wrap">
-              <div className="dog-walking-search-left-col two-columns-left mt-[3rem] basis-[38rem] justify-start pr-0 lg:w-[1/2]">
+              <div className="two-columns-left mt-[2rem] w-full basis-[38rem] pr-0 lg:w-[1/2]">
                 <form
                   onSubmit={requestFilteredVolunteers}
-                  className="custom-darkest-card ml-[3.5rem] h-[27rem] w-[32.5rem] "
+                  className="custom-darkest-card ml-[2.0rem] mr-[2.0rem] h-[26.5rem] max-w-[30.0rem]"
                 >
-                  <div className="location-info mt-[2.0rem] flex justify-start space-x-[1.0rem]">
+                  <div className="location-info mt-[2.0rem] ">
                     <h1 className="mb-2 p-0 text-[1.125rem] font-semibold tracking-wide text-white">
                       LOCATION:
                     </h1>
@@ -259,13 +258,13 @@ const DogWalkingSearchParams = () => {
                   </div>
 
                   <div className="flex justify-center">
-                    <button className="custom-button-darkest-card h-[3.00rem] w-[15.0rem]">
+                    <button className="custom-button-darkest-card h-[3.0rem] w-[15.0rem] pl-4 pr-4">
                       FIND ASSOCIATIONS
                     </button>
                   </div>
                 </form>
               </div>
-              <div className="dog-walking-search-right-col two-columns-right ml-[3.5rem]  mt-[3rem] flex w-full items-start justify-start lg:w-1/2 lg:flex-grow">
+              <div className="two-columns-right ml-[2.0rem] mr-[0rem] mt-[2rem] w-full pl-0 lg:w-1/2 lg:flex-grow">
                 {!mail ? (
                   <h2>
                     Register or Login to see the list of associations that need

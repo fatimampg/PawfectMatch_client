@@ -15,7 +15,7 @@ const Location = ({
     <div className="location">
       <label htmlFor="countries">
         <select
-          className="custom-select-option w-[20rem]"
+          className="custom-select-option w-full max-w-[25rem]"
           id="countries"
           value={selectedCountry}
           onChange={(e) => {
@@ -37,7 +37,7 @@ const Location = ({
 
       <label htmlFor="states">
         <select
-          className="custom-select-option w-[20rem]"
+          className="custom-select-option w-full max-w-[25rem]"
           id="states"
           value={selectedState}
           onChange={(e) => {
@@ -60,7 +60,7 @@ const Location = ({
 
       <label htmlFor="cities">
         <select
-          className="custom-select-option w-[20rem]"
+          className="custom-select-option w-full max-w-[25rem]"
           id="cities"
           value={selectedCity}
           onChange={(e) => {

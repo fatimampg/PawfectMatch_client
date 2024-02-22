@@ -278,27 +278,27 @@ const UserProfile = () => {
 
   return (
     <div className="profile-container pt-[5rem]">
-      <div className="title-and-button flex max-w-[66rem] flex-wrap justify-between">
+      <div className="">
         <h1 className="text-darkest mb-[4.0rem] flex justify-start pl-[3rem] text-[1.25rem] font-bold">
           USER PROFILE:
         </h1>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="container-two-columns grid grid-cols-1 gap-0 lg:w-[80rem] lg:grid-cols-2">
+        <div className="container-two-columns grid grid-cols-1 gap-0 lg:w-full lg:max-w-[80rem] lg:grid-cols-2">
           <div className="left-column flex flex-col pl-[3rem] lg:col-span-1">
             {userType === "association" ? (
-              <div className="flex shrink-0 flex-col ">
-                <div className="input-field mb-[1.0rem] flex items-center ">
+              <div className="flex flex-col">
+                <div className="input-field mb-[1.0rem] mr-[2rem] flex flex-col">
                   <label
                     htmlFor="associationName"
-                    className="text-darkest mr-2 mt-[0.50rem] shrink-0 pb-[0.5rem]  pr-[3.6rem] text-start text-[1.00rem] font-bold"
+                    className="text-darkest mt-[0.50rem] pb-[0.5rem] text-start text-[1.00rem] font-bold"
                   >
                     NAME:
                   </label>
                   <input
                     type="text"
                     id="associationName"
-                    className="user-data-input h-[2.4rem] w-[20rem] shrink-0"
+                    className="user-data-input h-[2.4rem] w-full max-w-[35rem] shrink-0"
                     value={associationName}
                     onChange={(e) => setAssociationName(e.target.value)}
                     placeholder="Name"
@@ -309,17 +309,17 @@ const UserProfile = () => {
               </div>
             ) : (
               <div className="flex shrink-0 flex-col ">
-                <div className="input-field mb-[1.0rem] flex items-center ">
+                <div className="input-field mb-[1.0rem] mr-[2rem] flex flex-col items-start ">
                   <label
                     htmlFor="nameFirst"
-                    className="text-darkest mr-2 mt-[0.50rem] shrink-0 pb-[0.5rem]  pr-[3.6rem] text-start text-[1.00rem] font-bold"
+                    className="text-darkest mt-[0.50rem] shrink-0 pb-[0.5rem]  text-start text-[1.00rem] font-bold"
                   >
                     NAME:
                   </label>
                   <input
                     type="text"
                     id="nameFirst"
-                    className="user-data-input h-[2.4rem] w-[20rem] shrink-0"
+                    className="user-data-input h-[2.4rem] w-full max-w-[35rem] shrink-0"
                     value={nameFirst}
                     onChange={(e) => setNameFirst(e.target.value)}
                     placeholder="First Name"
@@ -327,17 +327,17 @@ const UserProfile = () => {
                     defaultValue={nameFirst}
                   />
                 </div>
-                <div className="input-field mb-[1.0rem] flex items-center ">
+                <div className="input-field mb-[1.0rem] mr-[2rem] flex items-start justify-start">
                   <label
                     htmlFor="nameLast"
-                    className="text-darkest mr-2 shrink-0 pb-[1rem] pr-[6.8rem] text-start text-[1.00rem]"
+                    className="text-darkest shrink-0 pb-[1rem] text-start text-[1.00rem]"
                   >
-                    {" "}
+                    {""}
                   </label>
                   <input
                     type="text"
                     id="nameLast"
-                    className="user-data-input  h-[2.4rem] w-[20rem] shrink-0"
+                    className="user-data-input  h-[2.4rem] w-full max-w-[35rem] shrink-0"
                     value={nameLast}
                     onChange={(e) => setNameLast(e.target.value)}
                     placeholder="Last Name"
@@ -347,7 +347,7 @@ const UserProfile = () => {
                 </div>
               </div>
             )}
-            <div className="input-field mb-[1.0rem] flex items-center ">
+            <div className="input-field mb-[1.0rem] mr-[2rem] flex flex-col items-start ">
               <label
                 htmlFor="contactEmail"
                 className="text-darkest mr-2 mt-[0.50rem] shrink-0 pb-[0.5rem]  pr-[1.6rem] text-start text-[1.00rem] font-bold"
@@ -357,7 +357,7 @@ const UserProfile = () => {
               <input
                 type="email"
                 id="contactEmail"
-                className="user-data-input h-[2.4rem] w-[20rem] shrink-0"
+                className="user-data-input h-[2.4rem] w-full max-w-[35rem] shrink-0"
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="Email"
@@ -365,17 +365,17 @@ const UserProfile = () => {
                 defaultValue={contactEmail}
               />
             </div>
-            <div className="input-field mb-[0.0rem] flex items-center ">
+            <div className="input-field mb-[0.0rem] mr-[2rem] flex flex-col items-start ">
               <label
                 htmlFor="contactPhone"
-                className="text-darkest mr-2 shrink-0 pb-[1rem] pr-[6.8rem] text-start text-[1.00rem]"
+                className="text-darkest mr-2 shrink-0 text-start text-[1.00rem]"
               >
                 {" "}
               </label>
               <input
                 type="tel"
                 id="contactPhone"
-                className="user-data-input h-[2.4rem] w-[20rem] shrink-0"
+                className="user-data-input h-[2.4rem] w-full max-w-[20rem] shrink-0"
                 value={contactPhone}
                 onChange={(e) => setContactPhone(e.target.value)}
                 placeholder="Phone"
@@ -383,7 +383,7 @@ const UserProfile = () => {
                 defaultValue={contactPhone}
               />
             </div>
-            <div className="location-info mt-[1.0rem] flex justify-start space-x-[1.0rem]">
+            <div className="location-info mr-[2rem] mt-[1.0rem] flex flex-col justify-start space-x-[1.0rem]">
               <h1 className="text-darkest mt-[0.50rem] shrink-0 p-0  pb-[0.5rem] pr-[0.8rem] text-[1.00rem] font-semibold tracking-wide">
                 LOCATION:
               </h1>
@@ -411,7 +411,7 @@ const UserProfile = () => {
                 </div>
               )}
             </div>
-            <div className="input-description mb-[0.0rem] flex ">
+            <div className="input-description mb-[0.0rem] mr-[2rem] flex flex-col ">
               <label
                 htmlFor="description"
                 className="text-darkest mr-2 mt-[1.2rem] shrink-0 pb-[1rem] pr-[0rem] text-start text-[1.00rem] font-bold"
@@ -421,7 +421,7 @@ const UserProfile = () => {
               <textarea
                 type="text"
                 id="description"
-                className="user-data-input bg-darkest mt-[0.5rem] h-[2.4rem] w-[28.0rem] shrink-0 resize-none break-all px-4 py-4 pb-[6.0rem] text-justify leading-5 text-white"
+                className="user-data-input bg-darkest mt-[0.5rem] h-[2.4rem] w-full max-w-[35.0rem] shrink-0 resize-none break-all px-4 py-4 pb-[6.0rem] text-justify leading-5 text-white"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="(max. 200 characters)"
@@ -451,16 +451,16 @@ const UserProfile = () => {
               </label>
             </div>
           </div>
-          <div className="right-column pl-[3rem] pt-[0rem] lg:col-span-1 ">
+          <div className="right-column">
             {userType === "association" ? (
               <>
                 <div>
-                  <h1 className="text-darkest mb-[1.5rem] ml-[8rem] text-[1.0rem] font-bold">
+                  <h1 className="text-darkest mb-[1.5rem] mt-8 flex justify-center text-[1.0rem] font-bold">
                     {" "}
                     ADD/CHANGE LOGO{" "}
                   </h1>
                 </div>
-                <div className=" ml-[3rem] mt-[2rem] flex flex-wrap justify-start ">
+                <div className=" mt-[2rem] flex flex-wrap justify-center ">
                   <img
                     key={photo}
                     className="h-[20rem] w-[20rem] object-cover"
@@ -468,14 +468,17 @@ const UserProfile = () => {
                     alt="user_photo"
                   />
                 </div>
+                <h1 className="text-darkest mb-[1.5rem] mt-1 flex justify-center text-[0.9rem]">
+                  (Recommended aspect/ratio: 1:1){" "}
+                </h1>
               </>
             ) : (
               <>
-                <h1 className="text-darkest mb-[1.5rem] ml-[8rem] text-[1.0rem] font-bold ">
+                <h1 className="text-darkest mb-[1.5rem] mt-8 flex justify-center text-[1.0rem] font-bold ">
                   {" "}
                   ADD/CHANGE PHOTO{" "}
                 </h1>
-                <div className=" ml-[6rem] mt-[2rem] flex flex-wrap justify-start ">
+                <div className="mt-[2rem] flex flex-wrap justify-center">
                   <img
                     key={photo}
                     className="h-[20rem] w-[15rem] object-cover"
@@ -483,17 +486,17 @@ const UserProfile = () => {
                     alt="user_photo"
                   />
                 </div>
+                <h1 className="text-darkest mb-[1.5rem] mt-1 flex justify-center text-[0.9rem]">
+                  (Recommended aspect/ratio: 4:3){" "}
+                </h1>
               </>
             )}
-            <h1 className="text-darkest mb-[1.5rem] ml-[6.5rem] mt-1 text-[0.9rem]">
-              (Recommended aspect/ratio: 4:3){" "}
-            </h1>
-            <div>
+            <div className="flex justify-center">
               {editMode && (
-                <div className="mt-8">
+                <div className="">
                   <label
                     htmlFor="img"
-                    className="text-darkest mouse-pointer border-darkest  mb-[2rem] ml-[9.5rem] mt-[2rem] h-[2.5rem] w-[8.0rem] cursor-pointer rounded-[20px] border bg-white p-3 text-[0.875rem] font-bold"
+                    className="text-darkest mouse-pointer border-darkest h-[2.5rem] w-full max-w-[8.0rem] cursor-pointer  break-normal rounded-[20px] border bg-white p-3 text-[0.875rem] font-bold"
                   >
                     CHANGE PHOTO
                     <input
@@ -510,17 +513,17 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
-        <div className="mt-[1rem] flex max-w-[66rem] justify-center gap-4">
+        <div className="mt-[1rem] flex w-full items-center justify-center ">
           {editMode ? (
-            <div>
+            <div className="flex flex-wrap items-center justify-center">
               <button
-                className="custom-button-over-white-bg mr-8 h-[3.0rem] w-[11.0rem]"
+                className="custom-button-over-white-bg ml-1 mr-1 h-[3.0rem] w-[11.0rem]"
                 type="submit"
               >
                 SAVE CHANGES
               </button>
               <button
-                className="custom-button-over-white-bg h-[3.0rem] w-[11.0rem]"
+                className="custom-button-over-white-bg ml-1 mr-1 h-[3.0rem] w-[11.0rem]"
                 type="button"
                 onClick={() => handleCancelClick()}
               >

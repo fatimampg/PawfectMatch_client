@@ -16,11 +16,11 @@ const DogSearchParams = () => {
   const [selectedCity, setSelectedCity] = useState("");
   const [breeds, setBreeds] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState("");
-  const [filteredDogsArray, setFilteredDogsArray] = useState([]); 
+  const [filteredDogsArray, setFilteredDogsArray] = useState([]);
 
   const { countries, states, cities } = useLocationData(
     selectedCountryIso2,
-    selectedStateIso2
+    selectedStateIso2,
   );
 
   useEffect(() => {
@@ -52,12 +52,12 @@ const DogSearchParams = () => {
     e.preventDefault();
     if (selectedBreed === "All") {
       return sendDataToServer(
-        `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldogs`
+        `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldogs`,
       );
     }
     if (selectedBreed && !selectedCountry) {
       return sendDataToServer(
-        `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldogs/${selectedBreed}`
+        `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldogs/${selectedBreed}`,
       );
     } else {
       if (!selectedState || (selectedState === "All" && selectedBreed)) {
@@ -88,7 +88,7 @@ const DogSearchParams = () => {
           } catch (error) {
             console.error(
               "Error sending country and state data:",
-              error.message
+              error.message,
             );
           }
         } else {
@@ -134,9 +134,9 @@ const DogSearchParams = () => {
         <div className="two-columns-left w-full basis-[38rem] pr-0 lg:w-[1/2]">
           <form
             onSubmit={requestFiltered}
-            className="custom-darkest-card ml-[6.0rem] h-[32rem] w-[32.50rem] "
+            className="custom-darkest-card ml-[2.0rem] mr-[2.0rem] h-[32rem] max-w-[30rem] "
           >
-            <div className="location-info mt-[2.0rem] flex justify-start space-x-[1.0rem]">
+            <div className="location-info mt-[2.0rem] ">
               <h1 className="mb-2 mt-[0.3rem] p-0 text-[1.125rem] font-semibold tracking-wide text-white">
                 LOCATION:
               </h1>
@@ -157,13 +157,13 @@ const DogSearchParams = () => {
               </div>
             </div>
 
-            <div className="breed-info mt-[2rem] flex justify-start space-x-[3.12rem] pt-0">
+            <div className="breed-info mt-[2rem] pt-0">
               <h1 className="mt-[0.3rem] text-[1.125rem] font-semibold tracking-wide text-white">
                 BREED:
               </h1>
               <label htmlFor="breeds">
                 <select
-                  className="custom-select-option w-[20rem]"
+                  className="custom-select-option w-full max-w-[25rem]"
                   id="breeds"
                   value={selectedBreed}
                   onChange={(e) => {
@@ -189,7 +189,7 @@ const DogSearchParams = () => {
           </form>
         </div>
 
-        <div className="two-columns-right ml-[6.0rem] mr-[0rem] mt-[2rem] w-full pl-0 lg:w-1/2 lg:flex-grow">
+        <div className="two-columns-right ml-[2.0rem] mr-[0rem] mt-[2rem] w-full pl-0 lg:w-1/2 lg:flex-grow">
           <ResultsDogsAdoption filteredDogsArray={filteredDogsArray} />
         </div>
       </div>

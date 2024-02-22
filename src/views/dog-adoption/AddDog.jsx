@@ -50,7 +50,7 @@ const AddDog = () => {
   }, [token, navigate]);
 
   const email = currentUser.mail;
-
+  
   // fetch location data:
   const { countries, states, cities } = useLocationData(
     selectedCountryIso2,
@@ -82,7 +82,7 @@ const AddDog = () => {
   const handleAddDog = async (e) => {
     e.preventDefault();
 
-    // console.log("Data that is going to be sent to the DB:", {
+    // console.log("Data that is sent to the DB:", {
     //   dogName: dogName,
     //   dogBreed: selectedBreed,
     //   dogAge: dogAge,
@@ -190,25 +190,25 @@ const AddDog = () => {
   return (
     <form className="add-dog" onSubmit={handleAddDog}>
       <div className="dog-info-title flex items-center">
-        <h1 className="text-darkest font-customFont ml-[8rem] flex w-2/3 flex-grow justify-start p-[2.38rem] text-[1.25rem] font-semibold">
+        <h1 className="text-darkest font-customFont ml-[3rem] justify-start pb-[2.5rem] pt-[2.5rem] text-[1.25rem] font-semibold">
           ADD DOG FOR ADOPTION
         </h1>
       </div>
-      <div className="container-dog mt-[1rem] flex flex-wrap items-start gap-[0rem]">
-        <div className="container-dog-images ml-[10rem] flex-shrink-0 ">
+      <div className="container-dog mt-[1rem] flex flex-wrap items-start justify-center gap-[0rem]">
+        <div className="container-dog-images ml-[0rem] flex w-full max-w-[30rem] flex-col items-center justify-center">
           <img
             key={dogProfilePhoto}
             className="h-[25rem] w-[18.75rem] object-cover"
             src={dogProfilePhoto || noPhoto}
             alt="dog_photo"
           />
-          <h1 className="text-darkest mb-[1.5rem] ml-[2.0rem] mt-1 text-[0.9rem]">
+          <h1 className="text-darkest mb-[1.5rem] mt-1 text-[0.9rem]">
             (Recommended aspect/ratio: 4:3){" "}
           </h1>
-          <div className="mt-8">
+          <div className="mt-4">
             <label
               htmlFor="img"
-              className="text-darkest mouse-pointer border-darkest  mb-[2rem] ml-[4.5rem] mt-[2rem] h-[2.5rem] w-[8.0rem] cursor-pointer rounded-[20px] border bg-white p-3 text-[0.875rem] font-bold"
+              className="text-darkest mouse-pointer border-darkest mb-[2rem] h-auto w-full max-w-[8.0rem] cursor-pointer rounded-[20px] border bg-white p-[0.6rem] text-[0.875rem] font-bold"
             >
               CHANGE PHOTO
               <input
@@ -223,34 +223,34 @@ const AddDog = () => {
           </div>
         </div>
         <div className="flex-grow">
-          <div className="container-dog-info ml-[8.125rem]">
-            <div className="text-darkest mt-8 text-[1.0rem] ">
-              <div className="flex shrink-0 flex-col ">
-                <div className="input-field mb-[1.0rem] flex items-center ">
+          <div className="container-dog-info ml-[2.5rem]">
+            <div className="text-darkest mt-10 text-[1.0rem] ">
+              <div className="mr-[2.0rem] flex shrink-0 flex-col">
+                <div className="input-field mb-[1.0rem] flex flex-col items-start ">
                   <label
                     htmlFor="dogName"
-                    className="text-darkest mr-2 mt-[0.50rem] shrink-0 pb-[0.5rem]  pr-[3.7rem] text-start text-[1.00rem] font-bold"
+                    className="text-darkest mt-[0.50rem] shrink-0 pb-[0.5rem]  text-start text-[1.00rem] font-bold"
                   >
                     NAME:
                   </label>
                   <input
                     type="text"
                     id="dogName"
-                    className="user-data-input h-[2.4rem] w-[20rem] shrink-0"
+                    className="user-data-input h-[2.4rem] w-full max-w-[30rem] shrink-0"
                     value={dogName}
                     onChange={(e) => setDogName(e.target.value)}
                   />
                 </div>
               </div>
-              <div className="input-field mb-[1.0rem] flex items-center ">
+              <div className="input-field mr-[2.0rem] flex flex-col items-start ">
                 <label
                   htmlFor="dogAge"
-                  className="text-darkest mr-2 mt-[0.50rem] shrink-0 pb-[0.5rem]  pr-[4.6rem] text-start text-[1.00rem] font-bold"
+                  className="text-darkest mt-[0.50rem] shrink-0 pb-[0.5rem] text-[1.00rem] font-bold"
                 >
                   AGE:
                 </label>
                 <select
-                  className="custom-select-option w-[20rem]"
+                  className="custom-select-option w-full max-w-[30rem]"
                   id="dogAge"
                   value={dogAge}
                   onChange={(e) => {
@@ -262,15 +262,15 @@ const AddDog = () => {
                   <option key="moreThan2years">More than 2 years</option>
                 </select>
               </div>
-              <div className="breed-info mt-[0.0rem] flex justify-start space-x-[3.12rem] pt-0">
+              <div className="breed-info mr-[2rem] flex flex-col justify-start">
                 <label
                   htmlFor="breeds"
-                  className="text-darkest mr-2 mt-[0.50rem] shrink-0 pb-[0.5rem]  pr-[0.4rem] text-start text-[1.00rem] font-bold"
+                  className="text-darkest mt-[0.50rem] shrink-0 pb-[0.5rem] text-[1.00rem] font-bold"
                 >
                   BREED:
                 </label>
                 <select
-                  className="custom-select-option w-[20rem]"
+                  className="custom-select-option w-full max-w-[30rem]"
                   id="breeds"
                   value={selectedBreed}
                   onChange={(e) => {
@@ -287,8 +287,8 @@ const AddDog = () => {
                   ))}
                 </select>
               </div>
-              <div className="location-info mt-[0.0rem] flex justify-start space-x-[1.0rem]">
-                <h1 className="text-darkest mt-[0.50rem] shrink-0 p-0  pb-[0.5rem] pr-[0.8rem] text-[1.00rem] font-semibold tracking-wide">
+              <div className="location-info mr-[2rem] flex flex-col justify-start">
+                <h1 className="text-darkest mt-[0.50rem] shrink-0 pb-[0.5rem] text-[1.00rem] font-semibold tracking-wide">
                   LOCATION:
                 </h1>
                 <div>
@@ -307,7 +307,7 @@ const AddDog = () => {
                   />
                 </div>
               </div>
-              <div className="input-description mb-[0.0rem] flex ">
+              <div className="input-description mb-[0.0rem] mr-[2rem] flex flex-col ">
                 <label
                   htmlFor="dogDescription"
                   className="text-darkest mr-2 mt-[1.2rem] shrink-0 pb-[1rem] pr-[0rem] text-start text-[1.00rem] font-bold"
@@ -317,7 +317,7 @@ const AddDog = () => {
                 <textarea
                   type="text"
                   id="dogDescription"
-                  className="user-data-input bg-darkest mt-[0.5rem] h-[2.4rem] w-[28.0rem] shrink-0 resize-none break-all px-4 py-4 pb-[6.0rem] text-justify leading-5 text-white"
+                  className="user-data-input bg-darkest mt-[0.5rem] h-full min-h-[2.4rem] w-full max-w-[30.0rem] shrink-0 resize-none break-all px-4 py-4 pb-[6.0rem] text-justify leading-5 text-white"
                   value={dogDescription}
                   onChange={(e) => setDogDescription(e.target.value)}
                   placeholder="(max. 200 characters)"
