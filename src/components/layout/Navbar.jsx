@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-darkest">
-      <nav className="mx-auto flex w-[97%] items-center justify-between shadow-inner">
+      <nav className=" mx-auto flex min-h-[5rem] w-[97%] items-center justify-between shadow-inner">
         <div className="">
           <img className=" w-[14rem]" src={projectLogo} alt="project-logo" />
         </div>
@@ -51,13 +51,34 @@ const Navbar = () => {
             <div>
               <ul className="font-customFont ml-[1rem] flex flex-col gap-6 text-center text-[1.0rem] font-semibold text-white md:flex-row md:items-center md:gap-[7vw] ">
                 <li>
-                  <NavLink to="/">HOME</NavLink>{" "}
+                  <NavLink
+                    to="/"
+                    onClick={() => {
+                      setMenuOpen(false);
+                    }}
+                  >
+                    HOME
+                  </NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="/managedogs">MANAGE DOGS FOR ADOPTION</NavLink>{" "}
+                  <NavLink
+                    to="/managedogs"
+                    onClick={() => {
+                      setMenuOpen(false);
+                    }}
+                  >
+                    MANAGE DOGS FOR ADOPTION
+                  </NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="/dogwalking">VOLUNTEERS</NavLink>{" "}
+                  <NavLink
+                    to="/dogwalking"
+                    onClick={() => {
+                      setMenuOpen(false);
+                    }}
+                  >
+                    VOLUNTEERS
+                  </NavLink>{" "}
                 </li>
               </ul>
             </div>
@@ -65,13 +86,34 @@ const Navbar = () => {
             <div>
               <ul className="font-customFont ml-[1rem] flex flex-col gap-6 text-center text-[1.0rem] font-semibold text-white md:flex-row md:items-center md:gap-[7vw] ">
                 <li>
-                  <NavLink to="/">HOME</NavLink>{" "}
+                  <NavLink
+                    to="/"
+                    onClick={() => {
+                      setMenuOpen(false);
+                    }}
+                  >
+                    HOME
+                  </NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="/dogsadoption">DOGS FOR ADOPTION</NavLink>{" "}
+                  <NavLink
+                    to="/dogsadoption"
+                    onClick={() => {
+                      setMenuOpen(false);
+                    }}
+                  >
+                    DOGS FOR ADOPTION
+                  </NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="/dogwalking">DOG WALKING</NavLink>{" "}
+                  <NavLink
+                    to="/dogwalking"
+                    onClick={() => {
+                      setMenuOpen(false);
+                    }}
+                  >
+                    DOG WALKING
+                  </NavLink>{" "}
                 </li>
               </ul>
             </div>
