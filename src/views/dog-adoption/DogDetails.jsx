@@ -28,10 +28,8 @@ const DogDetails = () => {
   // Context:
   const { currentUser } = useContext(UserContext);
   let userType = currentUser?.usertype;
-  //let userType = "volunteer";
 
   let mail = currentUser?.mail;
-  //let mail = "test";
 
   useEffect(() => {
     if (!mail) {
@@ -121,7 +119,7 @@ const DogDetails = () => {
   return (
     <div className="dog-details">
       <button
-        className="custom-button-over-white-bg ml-[2rem] h-[3.0rem] w-[6.5rem]"
+        className="custom-button-over-white-bg ml-[2rem] h-[3.0rem] w-full max-w-[6.5rem]"
         onClick={handleBackNavigation}
       >
         BACK
@@ -130,17 +128,17 @@ const DogDetails = () => {
         DOG DETAILS
       </h1>
 
-      <div className="container-dog mt-[1rem] flex flex-wrap items-start justify-center gap-[0rem]">
-        <div className="container-dog-images ml-[0rem] flex w-full max-w-[30rem] flex-col items-center justify-center ">
+      <div className="container-dog mt-[1rem] flex flex-wrap items-start justify-center ">
+        <div className="container-dog-images flex w-full max-w-[35rem] flex-col items-center justify-center ">
           <img
-            className="w-22.105rem] h-[29.4rem] object-cover"
+            className="h-[29.4rem] w-[22.105rem] object-cover"
             src={dogProfilePhoto || dogPhotos[selectedPhotoIndex]}
             alt={dogName}
           />
         </div>
         <div className="flex-grow">
-          <div className="container-dog-info ml-[2.5rem]">
-            <div className="text-darkest mr-[2.0rem] mt-[2.0rem] flex shrink-0 flex-col break-all">
+          <div className="container-dog-info ml-[2.0rem]">
+            <div className="text-darkest mr-[2.0rem] mt-[2.0rem] flex shrink-0 flex-col break-words">
               <h2 className="mb-5">
                 <strong>NAME:</strong>&nbsp;&nbsp;&nbsp;{dogName}
               </h2>
@@ -165,7 +163,6 @@ const DogDetails = () => {
                 <strong>EMAIL:</strong>&nbsp;&nbsp;&nbsp;{contactEmail}
               </h2>
               <h2 className="text-darkest mt-10 h-auto w-full max-w-[35rem] p-2 text-justify font-bold italic">
-                {/* <h2 className="bg-darkest mt-10 h-full min-h-[10.94rem] w-full max-w-[35rem] rounded-lg p-2 text-justify text-white"> */}
                 {dogDescription}
               </h2>
             </div>
