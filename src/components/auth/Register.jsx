@@ -55,13 +55,13 @@ const Register = () => {
           {" "}
           REGISTER AS:{" "}
         </h1>
-        <div className="radioButton text-darkest mb-[2rem] flex space-x-[4rem]">
+        <div className="radioButton text-darkest mb-[2rem] flex space-x-[1.5rem]">
           <label>
             <input
               type="radio"
               value="regular"
               name="userType"
-              className="radio-button mr-[1rem]"
+              className="radio-button mr-[0.5rem]"
               onChange={changeInputHandler}
             />
             Regular User
@@ -71,7 +71,7 @@ const Register = () => {
               type="radio"
               value="volunteer"
               name="userType"
-              className="radio-button mr-[1rem]"
+              className="radio-button mr-[0.5rem]"
               onChange={changeInputHandler}
             />
             Volunteer
@@ -81,7 +81,7 @@ const Register = () => {
               type="radio"
               value="association"
               name="userType"
-              className="radio-button mr-[1rem]"
+              className="radio-button mr-[0.5rem]"
               onChange={changeInputHandler}
             />
             Association
