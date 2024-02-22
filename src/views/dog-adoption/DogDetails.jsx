@@ -28,7 +28,10 @@ const DogDetails = () => {
   // Context:
   const { currentUser } = useContext(UserContext);
   let userType = currentUser?.usertype;
+  //let userType = "volunteer";
+
   let mail = currentUser?.mail;
+  //let mail = "test";
 
   useEffect(() => {
     if (!mail) {
@@ -117,19 +120,18 @@ const DogDetails = () => {
 
   return (
     <div className="dog-details">
-      <div className="dog-details-title flex items-center">
-        <button
-          className="custom-button-over-white-bg ml-[2rem] h-[3.0rem] w-[6.5rem]"
-          onClick={handleBackNavigation}
-        >
-          BACK
-        </button>
-        <h1 className="text-darkest font-customFont flex w-2/3 flex-grow justify-center p-[2.38rem] text-[1.25rem] font-semibold">
-          DOG DETAILS
-        </h1>
-      </div>
-      <div className="container-dog mt-[1rem] flex flex-wrap items-start gap-[0rem]">
-        <div className="container-dog-images ml-[8.125rem] flex-shrink-0 ">
+      <button
+        className="custom-button-over-white-bg ml-[2rem] h-[3.0rem] w-[6.5rem]"
+        onClick={handleBackNavigation}
+      >
+        BACK
+      </button>
+      <h1 className="text-darkest font-customFont flex flex-wrap justify-center pb-[2.38rem] text-[1.25rem] font-semibold">
+        DOG DETAILS
+      </h1>
+
+      <div className="container-dog mt-[1rem] flex flex-wrap items-start justify-center gap-[0rem]">
+        <div className="container-dog-images ml-[0rem] flex w-full max-w-[30rem] flex-col items-center justify-center ">
           <img
             className="w-22.105rem] h-[29.4rem] object-cover"
             src={dogProfilePhoto || dogPhotos[selectedPhotoIndex]}
@@ -137,8 +139,8 @@ const DogDetails = () => {
           />
         </div>
         <div className="flex-grow">
-          <div className="container-dog-info ml-[8.125rem]">
-            <div className="text-darkest mt-10 text-[1.0rem] ">
+          <div className="container-dog-info ml-[2.5rem]">
+            <div className="text-darkest mr-[2.0rem] mt-[2.0rem] flex shrink-0 flex-col break-all">
               <h2 className="mb-5">
                 <strong>NAME:</strong>&nbsp;&nbsp;&nbsp;{dogName}
               </h2>
@@ -162,7 +164,8 @@ const DogDetails = () => {
               <h2 className="mb-5">
                 <strong>EMAIL:</strong>&nbsp;&nbsp;&nbsp;{contactEmail}
               </h2>
-              <h2 className="bg-darkest mt-10 h-[10.94rem] w-[35rem] rounded-lg p-2 text-justify text-white">
+              <h2 className="text-darkest mt-10 h-auto w-full max-w-[35rem] p-2 text-justify font-bold italic">
+                {/* <h2 className="bg-darkest mt-10 h-full min-h-[10.94rem] w-full max-w-[35rem] rounded-lg p-2 text-justify text-white"> */}
                 {dogDescription}
               </h2>
             </div>
