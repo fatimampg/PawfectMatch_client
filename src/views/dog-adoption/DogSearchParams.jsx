@@ -55,7 +55,13 @@ const DogSearchParams = () => {
         `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldogs`,
       );
     }
-    if (selectedBreed && !selectedCountry) {
+    if (selectedCountry) {
+      return sendDataToServer(
+        `${
+          import.meta.env.VITE_REACT_APP_BASE_URL
+        }/mydogs?country=${selectedCountry}`,
+      );
+    } else if (selectedBreed && !selectedCountry) {
       return sendDataToServer(
         `${import.meta.env.VITE_REACT_APP_BASE_URL}/alldogs/${selectedBreed}`,
       );
