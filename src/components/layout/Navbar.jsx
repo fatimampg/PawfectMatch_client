@@ -38,9 +38,9 @@ const Navbar = () => {
   return (
     <div className="bg-darkest">
       <nav className=" mx-auto flex min-h-[5rem] w-[97%] items-center justify-between shadow-inner">
-        <div className="">
+        <NavLink to="/">
           <img className=" w-[14rem]" src={projectLogo} alt="project-logo" />
-        </div>
+        </NavLink>
 
         <div
           className={`nav-links bg-darkest absolute left-0 ${
