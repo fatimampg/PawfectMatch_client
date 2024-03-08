@@ -6,6 +6,8 @@ Final Project - #codeathome Bootcamp 2023, TechLabs:
 - Fostering connections between individuals looking for an adoptable dog, shelters with available dogs for adoption and volunteers willing to provide dog-walking aid.
 - Full-stack application, developed using MongoDB, Express.js, React and Node.js. Uses Tailwind CSS for styling and Axios for handling HTTP requests. Firebase was incorporated for handling photo uploads and authentication.
 
-Web app URL: https://pawfect-match.onrender.com/
-Github repository (Frontend): https://github.com/fatimampg/PawfectMatch_client
+Web app URL: https://pawfect-match.onrender.com/  
+
+Github repository (Frontend): https://github.com/fatimampg/PawfectMatch_client  
+
 Github repository (Backend): https://github.com/Zida01/PawfectMatch-Server
