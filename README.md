@@ -20,10 +20,7 @@
 <br/>
 
 > Web app URL: https://pawfect-match.onrender.com/  
-
-> [Github repository (Frontend)]: (https://github.com/fatimampg/PawfectMatch_client)  
-
-> [Github repository (Backend)]: (https://github.com/Zida01/PawfectMatch-Server)
+> [Github repository - Backend](https://github.com/Zida01/PawfectMatch-Server)
 
 <br/>
 
