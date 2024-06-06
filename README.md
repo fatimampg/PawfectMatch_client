@@ -3,7 +3,7 @@
 ### Full-stack application [Final Project - #codeathome Bootcamp 2023, TechLabs]: 
 - Centralized platform that consolidates information on adoptable dogs, raising awareness and providing support to shelters requiring assistance with dog-walking.
 
-> [Check out a short demo video of the app!] (https://www.loom.com/share/1f1e24562f0c45e1a75399b6360bfc1f?sid=8c770a21-1793-41c1-9b22-882b512f5fcc)
+ https://www.loom.com/share/1f1e24562f0c45e1a75399b6360bfc1f?sid=8c770a21-1793-41c1-9b22-882b512f5fcc
 
 
 ## Technologies:
